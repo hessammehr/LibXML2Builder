@@ -7,7 +7,7 @@ version = v"0.1.0"
 
 # Collection of sources required to build LibXML2Builder
 sources = [
-    "ftp://xmlsoft.org/libxml2/libxml2-sources-2.9.9.tar.gz" =>
+    "http://xmlsoft.org/sources/libxml2-sources-2.9.9.tar.gz" =>
     "c553139a01a819e524e2950c7b71ebea7fd5aac59117f82a4d6973a88f8e9635",
 
 ]
