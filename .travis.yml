@@ -24,3 +24,15 @@ before_script:
 script:
   - julia build_tarballs.jl
 
+deploy:
+    provider: releases
+    api_key:
+        # Note; this api_key is only valid for hessammehr/LibXML2Builder; you need
+        # to make your own: https://docs.travis-ci.com/user/deployment/releases/
+        secure: JLA2CgxitkubEbNPsvObMMVmyAZMLvPaOCl/WLSqloXb4wMlG2xfXygQMyrK7evvx2rA+QUuYPt6/HCMzQtCh+AolnnJwSjl5NvIxot6DQpoCTJiGDdqzVdktz4WZE0s6bA14TfWovqeSgih2/xKnlk0pc3aBaxy1ZEqOIBTIP4+blWlS9dsWSO48ubb+4lQIq4yBndaMvfv7YTEj14d1Ek1snxOy9Qpawb+tux/h/YzJFnAi7hOIGphrnszswQ/A7RqnCC2ANZoUBKLW334V6eu2KJvCPXd5QoH9y+1Vx9W3KaZ+7C3hAnNY1hbSrO7K8S8gHunOt29McCGntlvBTdzTQevKOEJHaHdRHp0pLd5LWCUEZndh7jnJkjJlCG0Nm5PBAvSdtKffNiNtoeyNnADk6qUjR2btOyIh7ytQGlhnZLCBEgNUcVS54CLd93rImyvXZ7MFw5GyfJPScS2FJ6vzPJgHU6p8CM7oj5/vUZTjbthzUhX7ui78orK9esXNhhaAyMseqAcbSFai8fboyq2JJoq7B4sBc1hffDpCfZQUEwJljilL4yl0YDYwkJRryXhgsX57tcXvN7QZBndHmtfT3+4VvvuDm8dfZxltGqH8Ww2iCPGHDdk6Bp/oFKcEsGeqIWaySJOedzmS1wRaB3R1TGs5rA1ASqCOOVHqqw=
+    file_glob: true
+    file: products/*
+    skip_cleanup: true
+    on:
+        repo: hessammehr/LibXML2Builder
+        tags: true
